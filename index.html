@@ -28,35 +28,331 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="main-nav px-3">
+      <div class="main-nav">
         <a href="#">
-          <img class="logo" src="./assets/img/logo.png" alt="logo" />
+          <img class="logo" src="./assets/img/SkyHolidays.png" alt="logo" />
         </a>
 
-        <nav class="d-flex align-items-center">
+        <nav class="d-none d-md-flex align-items-center">
           <ul class="site-nav">
             <li class="site-nav__item"><a href="#">About Us</a></li>
             <li class="site-nav__item"><a href="#">Destinations</a></li>
             <li class="site-nav__item"><a href="#">Activities</a></li>
             <li class="site-nav__item"><a href="#">Contact Us</a></li>
           </ul>
+
           <ul class="auth-nav">
             <li class="auth-nav__item">
               <div class="d-flex align-items-center gap-2">
                 <img
                   class="lang-img"
                   src="./assets/img/USA.png"
-                  alt="flag"
+                  alt="USA flag"
                   width="16"
                 />
-                <span>EN</span>
+                <!-- <span>EN</span> -->
+                <div class="dropdown-center">
+                  <button
+                    class="btn dropdown-toggle p-0"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    EN
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <span class="dropdown-item">SE</span>
+                    </li>
+                    <li>
+                      <span class="dropdown-item">ES</span>
+                    </li>
+                    <li>
+                      <span class="dropdown-item">FR</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </li>
             <li class="auth-nav__item">
-              <button class="btn-main" type="button">Login</button>
+              <button
+                class="btn-main"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-in-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                  />
+                </svg>
+                Login
+              </button>
             </li>
+            <!-- Modal windows-->
+
+            <!-- login window -->
+            <div
+              class="modal"
+              id="loginModal"
+              tabindex="-1"
+              aria-labelledby="loginModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Login
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-start">
+                    <form>
+                      <div class="form-floating mb-2">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="name@example.com"
+                        />
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      <div class="form-floating">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="floatingPassword"
+                          placeholder="Password"
+                        />
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="my-2 form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+                        <label
+                          class="form-check-label"
+                          aria-required="true"
+                          for="exampleCheck1"
+                          >Remember me</label
+                        >
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer d-block border-0">
+                    <div
+                      class="mb-4 d-flex justify-content-around align-items-center"
+                    >
+                      <span>Don't have an account?</span>
+                      <button
+                        class="btn-remove"
+                        data-bs-target="#signupModal"
+                        data-bs-toggle="modal"
+                      >
+                        Sign up
+                      </button>
+                    </div>
+                    <button type="submit" class="btn-main m-0 w-100 fs-5">
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--signup window -->
+            <div
+              class="modal fade"
+              id="signupModal"
+              tabindex="-1"
+              aria-labelledby="signupModal"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 text-danger"
+                      id="exampleModalLabel"
+                    >
+                      Sign Up
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-start">
+                    <form>
+                      <div class="form-floating mb-2">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="Name"
+                        />
+                        <label for="floatingInput">Name</label>
+                      </div>
+                      <div class="form-floating mb-2">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="name@example.com"
+                        />
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      <div class="form-floating">
+                        <input
+                          type="password"
+                          class="form-control p-0"
+                          id="floatingPassword"
+                          placeholder="Password"
+                        />
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="my-2 form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck2"
+                        />
+                        <label class="form-check-label" for="exampleCheck2"
+                          >I agree the
+                          <span class="text-danger"
+                            >Terms and Conditions</span
+                          ></label
+                        >
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer d-block border-0">
+                    <div
+                      class="mb-4 d-flex justify-content-around align-items-center"
+                    >
+                      <span>Already have an account?</span>
+                      <button
+                        class="btn-main"
+                        data-bs-target="#loginModal"
+                        data-bs-toggle="modal"
+                      >
+                        Login
+                      </button>
+                    </div>
+                    <button type="submit" class="btn-remove m-0 fs-5 w-100">
+                      Sign Up
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </ul>
         </nav>
+
+        <!----------------------------- mobile menu ------------------>
+        <button
+          class="btn-main d-md-none d-flex align-items-center"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu"
+          aria-controls="mobileMenu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="mobileMenu"
+          aria-labelledby="mobileMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="site-nav-mobile">
+              <li class="site-nav-mobile__item"><a href="#">About Us</a></li>
+              <li class="site-nav-mobile__item">
+                <a href="#">Destinations</a>
+              </li>
+              <li class="site-nav-mobile__item"><a href="#">Activities</a></li>
+              <li class="site-nav-mobile__item"><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="auth-nav-mobile">
+              <li class="auth-nav-mobile__item">
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    class="lang-img"
+                    src="./assets/img/USA.png"
+                    alt="flag"
+                    width="16"
+                  />
+                  <span>EN</span>
+                </div>
+              </li>
+              <li class="auth-nav-mobile__item">
+                <button class="btn-main" type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-box-arrow-in-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                    /></svg
+                  >Login
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-----------------------------end mobile menu ------------------>
       </div>
     </header>
 
@@ -69,7 +365,7 @@
               xmlns="http://www.w3.org/2000/svg"
               width="40"
               height="40"
-              fill="#f3712b"
+              fill="#ed5b4a"
               class="bi bi-geo-alt-fill"
               viewBox="0 0 16 16"
             >
@@ -200,7 +496,7 @@
                   <div id="oneway" class="tab-pane active">
                     <form class="row g-3">
                       <div
-                        class="col-md-12 d-flex justify-content-end text-small"
+                        class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
                       >
                         <div class="dropdown travellers" id="myDD">
                           <button
@@ -541,7 +837,7 @@
                   <div id="return" class="tab-pane fade">
                     <form class="row g-3">
                       <div
-                        class="col-md-12 d-flex justify-content-end text-small"
+                        class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
                       >
                         <div class="dropdown travellers" id="myDDReturn">
                           <button
@@ -888,7 +1184,7 @@
                   <div id="multiCity" class="tab-pane fade">
                     <form class="row g-3">
                       <div
-                        class="col-md-12 d-flex justify-content-end text-small"
+                        class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
                       >
                         <div class="dropdown travellers mb-3" id="myDDRound">
                           <button
@@ -1135,7 +1431,7 @@
                         </div>
                       </div>
                       <!-- input fields -->
-                      <div class="col-md-6 mt-0">
+                      <div class="col-md-6 mt-3">
                         <div class="input-group">
                           <span class="input-group-text" id="basic-addon1"
                             ><svg
@@ -1158,7 +1454,7 @@
                           />
                         </div>
                       </div>
-                      <div class="col-md-6 mt-0">
+                      <div class="col-md-6 mt-3">
                         <div class="input-group">
                           <span class="input-group-text" id="basic-addon1"
                             ><svg
@@ -1329,7 +1625,7 @@
               >
                 <form class="row g-3">
                   <div
-                    class="col-md-12 d-flex justify-content-between text-small"
+                    class="col-md-12 d-flex justify-content-center text-small"
                   >
                     <div class="col-md-6"></div>
                     <div
@@ -1570,11 +1866,13 @@
                     </div>
                   </div>
                   <div
-                    class="col-md-12 d-flex justify-content-between text-small"
+                    class="col-md-12 d-flex flex-column flex-sm-row justify-content-between text-small"
                   >
-                    <div class="col-md-6">Or search the classic way</div>
+                    <div class="text-center mb-1">
+                      Or search the classic way
+                    </div>
                     <div
-                      class="col-md-6 d-flex justify-content-end align-items-center gap-2"
+                      class="d-flex justify-content-center align-items-center gap-2"
                     >
                       <div class="dropdown days">
                         <button
@@ -1959,17 +2257,27 @@
 
     <footer class="footer">
       <div class="page-container">
-        <div class="">
-          <a href="#">
-            <img class="logo" src="./assets/img/logo.png" alt="logo" />
+        <div>
+          <a
+            href="#"
+            class="d-flex justify-content-center justify-content-md-start"
+          >
+            <img
+              class="logo"
+              src="./assets/img/SkyHolidays.png"
+              alt="Skyholidays logo"
+            />
           </a>
-          <p class="copyright">&#169;Copyright 2023.All Rights Reserved.</p>
+          <p class="copyright mt-2">
+            &#169;Copyright 2023.All Rights Reserved.
+          </p>
         </div>
+        <div class="devider"></div>
         <div>
           <h5 class="title">social with us</h5>
-          <ul class="social-link_list">
+          <ul class="social-link_list mt-2">
             <li class="social-link_item">
-              <a href=""
+              <a href="#"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -1984,7 +2292,7 @@
               ></a>
             </li>
             <li class="social-link_item">
-              <a href=""
+              <a href="#"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -1999,7 +2307,7 @@
               ></a>
             </li>
             <li class="social-link_item">
-              <a href=""
+              <a href="#"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -2015,9 +2323,10 @@
             </li>
           </ul>
         </div>
+        <div class="devider"></div>
         <div>
-          <h5>our newsletter</h5>
-          <p class="copyright">
+          <h5 class="title">our newsletter</h5>
+          <p class="copyright mt-2">
             Never miss an offer subscribe to our newsletter
           </p>
           <form class="mt-3">
