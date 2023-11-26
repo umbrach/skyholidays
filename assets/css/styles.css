@@ -191,7 +191,7 @@ p {
   font-family: "Parisienne", cursive;
   font-size: 50px;
   letter-spacing: 0.06em;
-  color: rgb(96, 254, 201)
+  color: rgb(96, 254, 201);
 }
 
 /* ------------------------------------------------------------------------- */
@@ -783,7 +783,7 @@ section.page-listing {
 
 .page-listing h2 {
   margin-bottom: 50px;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
   text-align: center;
   color: var(--primary-white-color);
@@ -807,7 +807,7 @@ section.page-listing {
 }
 
 .date-square__date {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -822,10 +822,10 @@ section.page-listing {
   background-color: var(--bg-grey);
 }
 .step-number {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   text-align: center;
   color: white;
@@ -833,7 +833,7 @@ section.page-listing {
 }
 .step-location {
   max-width: 180px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 .step-icon {
@@ -864,7 +864,7 @@ section.page-listing {
 }
 
 .step-info {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #5e5c5c;
 }
@@ -874,13 +874,20 @@ section.page-listing {
   max-height: 150px;
   object-fit: cover;
   border-radius: 8px;
+  transition: all 350ms var(--cubic-bezier);
+}
+
+.photo:hover,
+.photo:focus {
+  scale: 1.02;
+  box-shadow: 0px 1px 5px 1px rgba(68, 68, 68, 0.32);
 }
 
 .page-listing .btn-select {
   display: flex;
   align-items: center;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
   color: #5e5c5c;
   text-transform: uppercase;
   transition: color 350ms var(--cubic-bezier);
@@ -907,11 +914,131 @@ section.page-listing {
 }
 
 .next-trip h4 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 /* ------------------------------------------------------------------------- */
+
+/* Page reservation */
+
+section.page-reservation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* background-image: url(../img/iccup-Rljwy2QK4YE-unsplash.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-reservation h2 {
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+.page-reservation .title-word {
+  margin-bottom: 50px;
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--btn-secondary-color);
+}
+
+.price-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0px 15px;
+  border-radius: 12px;
+  background-color: rgb(66, 198, 116);
+}
+
+.price-container .price-total {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.price-container .devider {
+  background: white;
+}
+
+.itinerary-wraper:last-child{
+  border-bottom: 1px solid var(--bg-grey);
+}
+
+.itinerary {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.date-square .airline-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.line{
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(221, 221, 221, 1) 0%,
+    rgba(144, 144, 144, 1) 50%,
+    rgba(221, 221, 221, 1) 100%
+  );
+}
+
+.line svg{
+  position: absolute;
+  top: -8px;
+  left: 45%;
+}
+
+.page-reservation .photo{
+  max-height: 100%;
+}
+
+.hotel-name{
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-text-color);
+}
+
+.hotel-location, .hotel-description{
+  padding: 8px 0px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary-text-color);
+}
+
+.amenities-wraper{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amenities-wraper:not(:last-child)  {
+margin-right: 5px;
+}
+.amenities-wraper_text{
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+}
 
 /* footer */
 
