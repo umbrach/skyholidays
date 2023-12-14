@@ -64,28 +64,13 @@ jQuery(document).ready(function () {
     updateTotalTravellers();
   });
 
-  // Добавьте также вызов функции при изменении класса обслуживания
+  // add function call while changing flight class
   $('input[name="class"]').change(function () {
     updateTotalTravellers();
   });
 });
 
 //Traveller Box not close on inside click
-$("#myDD").on("click", function (event) {
-  // The event won't be propagated up to the document NODE and
-  // therefore delegated events won't be fired
-  event.stopPropagation();
-});
-
-//Traveller Box not close on inside click
-$("#myDDReturn").on("click", function (event) {
-  // The event won't be propagated up to the document NODE and
-  // therefore delegated events won't be fired
-  event.stopPropagation();
-});
-
-$("#myDDRound").on("click", function (event) {
-  // The event won't be propagated up to the document NODE and
-  // therefore delegated events won't be fired
+$("#myDD, #myDDReturn, #myDDRound").on("click", function (event) {
   event.stopPropagation();
 });
