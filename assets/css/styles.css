@@ -17,7 +17,6 @@ html,
 body {
   height: 100%;
   font-family: "Open Sans", sans-serif;
-  /* letter-spacing: 0.01em; */
   background-color: var(--primary-white-color);
 }
 
@@ -135,6 +134,21 @@ p {
 }
 .btn-remove:hover {
   background: #d80606;
+}
+
+.btn-details {
+  background: none;
+  font-weight: 600;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  transition: all 350ms var(--cubic-bezier);
+}
+
+.btn-details:hover,
+.btn-details:focus, .btn-details:active {
+  border: 1px solid var(--btn-secondary-color);
+  color: var(--btn-secondary-color);
 }
 
 .overlay {
@@ -775,7 +789,8 @@ section.page-listing {
   min-height: 80vh;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-image: url(../img/bg_1.png);
+  background-color: #d9d9d9;
+  /* background-image: url(../img/bg_1.png); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -972,7 +987,7 @@ section.page-reservation {
   background: white;
 }
 
-.itinerary-wraper:last-child{
+.itinerary-wraper:last-child {
   border-bottom: 1px solid var(--bg-grey);
 }
 
@@ -991,7 +1006,7 @@ section.page-reservation {
   object-fit: contain;
 }
 
-.line{
+.line {
   width: 100px;
   height: 1px;
   background: linear-gradient(
@@ -1002,39 +1017,40 @@ section.page-reservation {
   );
 }
 
-.line svg{
+.line svg {
   position: absolute;
   top: -8px;
   left: 45%;
 }
 
-.page-reservation .photo{
+.page-reservation .photo {
   max-height: 100%;
 }
 
-.hotel-name{
+.hotel-name {
   font-size: 16px;
   font-weight: 600;
   color: var(--primary-text-color);
 }
 
-.hotel-location, .hotel-description{
+.hotel-location,
+.hotel-description {
   padding: 8px 0px;
   font-size: 14px;
   font-weight: 600;
   color: var(--secondary-text-color);
 }
 
-.amenities-wraper{
+.amenities-wraper {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
 }
 
-.amenities-wraper:not(:last-child)  {
-margin-right: 5px;
+.amenities-wraper:not(:last-child) {
+  margin-right: 5px;
 }
-.amenities-wraper_text{
+.amenities-wraper_text {
   font-size: 12px;
   font-weight: 500;
   color: var(--secondary-text-color);
