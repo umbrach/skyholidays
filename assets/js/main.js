@@ -7,7 +7,6 @@ $(document).ready(function () {
   });
 });
 
-
 // ------------Date pickers---------------
 
 // multiple datepicker
@@ -42,3 +41,22 @@ $(function () {
 });
 
 // ------------End Date pickers---------------
+
+// Additional services checkboxes------
+
+function toggleHiddenCheckbox() {
+  // Getting references to elements
+  // let hiddenCheckboxLabel = document.getElementById("hiddenCheckbox");
+  let hiddenCheckbox = document.getElementById("hiddenCheckbox");
+
+  // Checking the state of the first checkbox
+  if (document.getElementById("mainCheckbox").checked) {
+    // If selected, show the hidden button
+    hiddenCheckbox.style.display = "block";
+  } else {
+    // If not selected, hide the hidden button
+    hiddenCheckbox.style.display = "none";
+    // Resetting the state of the hidden checkbox
+    hiddenCheckbox.checked = false;
+  }
+}
