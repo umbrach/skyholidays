@@ -251,6 +251,50 @@ p {
   border-color: var(--btn-main-color);
 }
 
+.price-range-slider {
+  width: 100%;
+  float: left;
+  padding: 10px 0px;
+}
+.price-range-slider .range-value {
+  margin: 0;
+}
+.price-range-slider .range-value input {
+  width: 100%;
+  background: none;
+  color: var(--primary-white-color);
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: none;
+  border: none;
+  margin: 10px 0px;
+}
+.price-range-slider .range-bar {
+  border: none;
+  background: var(--bg-grey);
+  height: 3px;
+  width: 96%;
+  margin-left: 8px;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.price-range-slider .range-bar .ui-slider-range {
+  background: var(--btn-secondary-color);
+}
+.price-range-slider .range-bar .ui-slider-handle {
+  border: none;
+  border-radius: 25px;
+  background: #ffffff;
+  border: 2px solid var(--accent-color);
+  height: 17px;
+  width: 17px;
+  top: -0.52em;
+  cursor: pointer;
+}
+.price-range-slider .range-bar .ui-slider-handle + span {
+  background: var(--accent-color);
+}
+
 /* ------------------------------------------------------------------------- */
 /* header */
 
@@ -664,9 +708,14 @@ section.page-hero {
   color: var(--primary-white-color);
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 .select option {
   color: var(--primary-text-color);
+}
+
+.select-hover:hover i {
+  color: var(--btn-secondary-color);
 }
 
 /* add room dropdown styles */
@@ -840,7 +889,9 @@ section.page-flight {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.page-flight .page-container {
+  max-width: 1000px;
+}
 .page-flight h2 {
   margin-bottom: 60px;
   font-size: 36px;
@@ -855,7 +906,7 @@ section.page-flight {
   color: var(--btn-secondary-color);
 }
 .page-flight .page-hero__form {
-  /* max-width: 100%; */
+  max-width: 100%;
   margin: 0 auto;
   border-radius: 0px;
   background: #3c3b3b;
@@ -863,6 +914,18 @@ section.page-flight {
 .page-flight label {
   font-size: 12px;
   color: var(--primary-white-color);
+}
+
+.search-desc {
+  font-size: 14px;
+}
+
+/* Page Hotel listing */
+
+
+.italic {
+    font-size: 12px;
+    font-style: italic;
 }
 
 /* Page-listing -------------------------------------------------------*/
@@ -977,7 +1040,7 @@ section.page-listing {
 }
 
 .photo {
-  max-width: 250px;
+  max-width: 100%;
   max-height: 150px;
   object-fit: cover;
   border-radius: 8px;
@@ -1518,11 +1581,6 @@ section.page-payment {
   padding: 5px 0px 5px;
   color: var(--primary-text-color);
 }
-
-/* .support-level .option-card__list li {
-  color: var(--primary-text-color);
-} */
-
 .ctn-btns {
   position: absolute;
   left: 0;

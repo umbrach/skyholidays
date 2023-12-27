@@ -42,7 +42,7 @@ $(function () {
 
 // ------------End Date pickers---------------
 
-// Additional services checkboxes------
+// Additional services checkboxes-------------
 
 function toggleHiddenCheckbox() {
   // Getting references to elements
@@ -60,3 +60,22 @@ function toggleHiddenCheckbox() {
     hiddenCheckbox.checked = false;
   }
 }
+
+// price range slider
+$(function () {
+  $("#slider-range").slider({
+    range: true,
+    min: 50,
+    max: 1000,
+    values: [130, 650],
+    slide: function (event, ui) {
+      $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+    },
+  });
+  $("#amount").val(
+    "$" +
+      $("#slider-range").slider("values", 0) +
+      " - $" +
+      $("#slider-range").slider("values", 1)
+  );
+});
