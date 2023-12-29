@@ -424,10 +424,10 @@
                               <option selected="1 star & up">
                                 1 star & up
                               </option>
-                              <option value="2 stars & up">2 star & up</option>
-                              <option value="3 stars & up">3 star & up</option>
-                              <option value="4 stars & up">4 star & up</option>
-                              <option value="5 stars">5 star</option>
+                              <option value="2 stars & up">2 stars & up</option>
+                              <option value="3 stars & up">3 stars & up</option>
+                              <option value="4 stars & up">4 stars & up</option>
+                              <option value="5 stars">5 stars</option>
                             </select>
                           </div>
                           <div class="border border-1 h-100"></div>
@@ -591,7 +591,7 @@
             <div class="col-12">
               <div class="row py-2 search-desc">
                 <div class="col align-self-center fw-semibold">
-                  <div class="fw-bold">
+                  <div class="search-desc__destination">
                     <span>Barcelona(ES)</span>
                   </div>
                   <ul>
@@ -604,28 +604,32 @@
                       <span class="fw-semibold">Wed, 05 Jan, 2024</span>
                     </li>
                   </ul>
-                  <div class="fw-bold">
-                    Guest(s): <span class="fw-semibold">3(Three)</span>
-                  </div>
-                  <div class="fw-bold">
-                    Room(s): <span class="fw-semibold">1(One)</span>
-                  </div>
-                  <div class="fw-bold">
-                    Night(s): <span class="fw-semibold">3(Three)</span>
+                  <div class="d-flex gap-2">
+                    <div class="fw-bold">
+                      Guest(s): <span class="fw-semibold">3(Three)</span>
+                    </div>
+                    <div class="fw-bold">
+                      Room(s): <span class="fw-semibold">1(One)</span>
+                    </div>
+                    <div class="fw-bold">
+                      Night(s): <span class="fw-semibold">3(Three)</span>
+                    </div>
                   </div>
                 </div>
-                <div class="col-6 text-end align-self-center fw-semibold">
+                <div
+                  class="col-6 col-md-4 text-end align-self-center fw-semibold"
+                >
                   Found <span class="fw-bold">43</span> results
                 </div>
               </div>
             </div>
             <!-- Filter -->
             <div
-              class="col-12 px-0 rounded-bottom-2"
+              class="col-12 d-flex justify-content-between px-0 rounded-bottom-2"
               style="background: #3c3b3b"
             >
               <button
-                class="btn-main fw-bold p-2 w-100"
+                class="btn-main fw-bold ms-4 p-2"
                 style="background: #3c3b3b; border-radius: 0px"
                 type="button"
                 data-bs-toggle="collapse"
@@ -633,10 +637,24 @@
                 aria-expanded="false"
                 aria-controls="collapseFilter"
               >
-                <i class="bi bi-funnel-fill"></i>
+                <i class="bi bi-funnel"></i>
                 Filter
               </button>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-sort-down" style="color: #fff"></i>
+                <select class="select me-4" aria-label="sorting selection">
+                  <option selected="Price Low to High">
+                    Price Low to High
+                  </option>
+                  <option value="Price High to Low">Price Low to Low</option>
+                  <option value="Name A to Z">Name A to Z</option>
+                  <option value="Name Z to A">Name Z to A</option>
+                  <option value="Stars Low to High">Stars Low to High</option>
+                  <option value="Stars High to Low">Stars High to Low</option>
+                </select>
+              </div>
             </div>
+            <!-- collapsed filter -->
             <div
               class="collapse p-0"
               id="collapseFilter"
@@ -1261,7 +1279,7 @@
               </div>
             </div>
           </div>
-          <!-- pagination---------------->
+          <!-- pagination -->
           <div class="row my-3">
             <ul class="col-12 pagination pagination-md justify-content-center">
               <li class="page-item">

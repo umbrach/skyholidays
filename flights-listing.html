@@ -1608,13 +1608,13 @@
             <div class="col-12">
               <div class="row py-2 search-desc">
                 <div class="col align-self-center fw-semibold">
-                  <div class="fw-bold">
+                  <div class="search-desc__destination">
                     <span>Rome(IT)</span>
                     <i class="bi bi-arrow-right px-1"></i
                     ><span>Barcelona(ES)</span>
                   </div>
                   <div class="fw-semibold font-small">Wed, 02 Jan, 2024</div>
-                  <div class="fw-bold">
+                  <div class="search-desc__destination">
                     <span>Barcelona(ES)</span>
                     <i class="bi bi-arrow-right px-1"></i><span>Rome(IT)</span>
                   </div>
@@ -1627,11 +1627,11 @@
             </div>
             <!-- Filter -->
             <div
-              class="col-12 px-0 rounded-bottom-2"
+              class="col-12 d-flex justify-content-between px-0 rounded-bottom-2"
               style="background: #3c3b3b"
             >
               <button
-                class="btn-main fw-bold p-2 w-100"
+                class="btn-main fw-bold ms-4 p-2"
                 style="background: #3c3b3b; border-radius: 0px"
                 type="button"
                 data-bs-toggle="collapse"
@@ -1639,10 +1639,22 @@
                 aria-expanded="false"
                 aria-controls="collapseFilter"
               >
-                <i class="bi bi-funnel-fill"></i>
+                <i class="bi bi-funnel"></i>
                 Filter
               </button>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-sort-down" style="color: #fff"></i>
+                <select class="select me-4" aria-label="sorting selection">
+                  <option selected="Price Low to High">
+                    Price Low to High
+                  </option>
+                  <option value="Price High to Low">Price High to Low</option>
+                  <option value="Name A to Z">Name A to Z</option>
+                  <option value="Name Z to A">Name Z to A</option>
+                </select>
+              </div>
             </div>
+            <!-- collapsed filter -->
             <div
               class="collapse p-0"
               id="collapseFilter"
