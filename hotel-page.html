@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyHolidays - Hotel Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Satisfy&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="main-nav">
+        <a href="./index.html">
+          <img class="logo" src="./assets/img/SkyHolidays.png" alt="logo" />
+        </a>
+
+        <nav class="d-none d-md-flex align-items-center">
+          <ul class="site-nav">
+            <li class="site-nav__item"><a href="#">About Us</a></li>
+            <li class="site-nav__item"><a href="#">Destinations</a></li>
+            <li class="site-nav__item"><a href="#">Activities</a></li>
+            <li class="site-nav__item"><a href="#">Contact Us</a></li>
+          </ul>
+
+          <ul class="auth-nav">
+            <li class="auth-nav__item">
+              <div class="d-flex align-items-center gap-2">
+                <img
+                  class="lang-img"
+                  src="./assets/img/USA.png"
+                  alt="USA flag"
+                  width="16"
+                />
+                <!-- <span>EN</span> -->
+                <div class="dropdown-center">
+                  <button
+                    class="btn dropdown-toggle p-0"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    EN
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <span class="dropdown-item">SE</span>
+                    </li>
+                    <li>
+                      <span class="dropdown-item">ES</span>
+                    </li>
+                    <li>
+                      <span class="dropdown-item">FR</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="auth-nav__item">
+              <button
+                class="btn-main"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-in-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                  />
+                </svg>
+                Login
+              </button>
+            </li>
+            <!-- Modal windows-->
+
+            <!-- login window -->
+            <div
+              class="modal"
+              id="loginModal"
+              tabindex="-1"
+              aria-labelledby="loginModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Login
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-start">
+                    <form>
+                      <div class="form-floating mb-2">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="name@example.com"
+                        />
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      <div class="form-floating">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="floatingPassword"
+                          placeholder="Password"
+                        />
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="my-2 form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+                        <label
+                          class="form-check-label"
+                          aria-required="true"
+                          for="exampleCheck1"
+                          >Remember me</label
+                        >
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer d-block border-0">
+                    <div
+                      class="mb-4 d-flex justify-content-around align-items-center"
+                    >
+                      <span>Don't have an account?</span>
+                      <button
+                        class="btn-remove"
+                        data-bs-target="#signupModal"
+                        data-bs-toggle="modal"
+                      >
+                        Sign up
+                      </button>
+                    </div>
+                    <button type="submit" class="btn-main m-0 w-100 fs-5">
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--signup window -->
+            <div
+              class="modal fade"
+              id="signupModal"
+              tabindex="-1"
+              aria-labelledby="signupModal"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 text-danger"
+                      id="exampleModalLabel"
+                    >
+                      Sign Up
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-start">
+                    <form>
+                      <div class="form-floating mb-2">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="Name"
+                        />
+                        <label for="floatingInput">Name</label>
+                      </div>
+                      <div class="form-floating mb-2">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="name@example.com"
+                        />
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      <div class="form-floating">
+                        <input
+                          type="password"
+                          class="form-control p-0"
+                          id="floatingPassword"
+                          placeholder="Password"
+                        />
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="my-2 form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck2"
+                        />
+                        <label class="form-check-label" for="exampleCheck2"
+                          >I agree the
+                          <span class="text-danger"
+                            >Terms and Conditions</span
+                          ></label
+                        >
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer d-block border-0">
+                    <div
+                      class="mb-4 d-flex justify-content-around align-items-center"
+                    >
+                      <span>Already have an account?</span>
+                      <button
+                        class="btn-main"
+                        data-bs-target="#loginModal"
+                        data-bs-toggle="modal"
+                      >
+                        Login
+                      </button>
+                    </div>
+                    <button type="submit" class="btn-remove m-0 fs-5 w-100">
+                      Sign Up
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </nav>
+
+        <!----------------------------- mobile menu ------------------>
+        <button
+          class="btn-main d-md-none d-flex align-items-center"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu"
+          aria-controls="mobileMenu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="mobileMenu"
+          aria-labelledby="mobileMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="site-nav-mobile">
+              <li class="site-nav-mobile__item"><a href="#">About Us</a></li>
+              <li class="site-nav-mobile__item">
+                <a href="#">Destinations</a>
+              </li>
+              <li class="site-nav-mobile__item"><a href="#">Activities</a></li>
+              <li class="site-nav-mobile__item"><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="auth-nav-mobile">
+              <li class="auth-nav-mobile__item">
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    class="lang-img"
+                    src="./assets/img/USA.png"
+                    alt="flag"
+                    width="16"
+                  />
+                  <span>EN</span>
+                </div>
+              </li>
+              <li class="auth-nav-mobile__item">
+                <button class="btn-main" type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-box-arrow-in-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                    /></svg
+                  >Login
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-----------------------------end mobile menu ------------------>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hotel">
+        <div class="page-container">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-between mb-2">
+              <p class="fw-semibold">Hotel Details</p>
+              <a href="./hotel-listing.html" class="btn-back"
+                ><i class="bi bi-arrow-left pe-1"></i>Back to search</a
+              >
+            </div>
+            <div class="col-12 p-2 main-bg-white">
+              <div class="row">
+                <div class="col-12">
+                  <p class="location">Barcelona</p>
+                  <h5 class="fw-bold">
+                    Best Western Premier Hotel Dante
+                    <span class="fs-6"
+                      ><i class="bi bi-star-fill me-1" style="color: gold"></i
+                      ><i class="bi bi-star-fill me-1" style="color: gold"></i
+                      ><i class="bi bi-star-fill me-1" style="color: gold"></i
+                      ><i class="bi bi-star-fill me-1" style="color: gold"></i
+                      ><i class="bi bi-star-fill me-1" style="color: gold"></i
+                    ></span>
+                  </h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <a href="#" class="hotel-location"
+                    ><i class="bi bi-geo-alt-fill me-1"></i>Avenida Diagonal
+                    161-163, 08018 Barcelona, Barcelona</a
+                  >
+                </div>
+              </div>
+              <div class="row">
+                <ul class="col hotel-details">
+                  <li>
+                    <i class="bi bi-calendar2-check-fill me-1"></i>Check In:
+                    <span>02 Jan 2024</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-calendar2-x-fill me-1"></i>Check Out:
+                    <span>06 Jan, 2024</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-moon-fill me-1"></i>Nights(s):
+                    <span>4</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-person-fill me-1"></i>Guest(s):
+                    <span>2 Adult</span>
+                  </li>
+                  <li>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      class="me-1"
+                      fill="#1396ec"
+                      id="bed"
+                    >
+                      <path
+                        d="M7,12.5a3,3,0,1,0-3-3A3,3,0,0,0,7,12.5Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,7,8.5Zm13-2H12a1,1,0,0,0-1,1v6H3v-8a1,1,0,0,0-2,0v13a1,1,0,0,0,2,0v-3H21v3a1,1,0,0,0,2,0v-9A3,3,0,0,0,20,6.5Zm1,7H13v-5h7a1,1,0,0,1,1,1Z"
+                      ></path></svg
+                    >Room(s): <span>1</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Hotel-->
+            <div class="col-12 my-3 main-bg-white">
+              <div class="row">
+                <!-- gallery -->
+                <div class="col-12 col-md-6">
+                  <div class="py-2">
+                    <img
+                      class="photo main-image"
+                      src="https://images.unsplash.com/photo-1605346576608-92f1346b67d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="room photo"
+                      width="300"
+                      height="300"
+                    />
+                  </div>
+                  <div class="main-content pt-2">
+                    <div class="owl-carousel owl-theme main-carousel">
+                      <div>
+                        <img
+                          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="https://plus.unsplash.com/premium_photo-1675616563084-63d1f129623d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://plus.unsplash.com/premium_photo-1675616563084-63d1f129623d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src="https://plus.unsplash.com/premium_photo-1675616563084-63d1f129623d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="Hotel room photo"
+                          width="150"
+                          onclick="changeImage('https://plus.unsplash.com/premium_photo-1675616563084-63d1f129623d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        />
+                      </div>
+                    </div>
+                    <div class="owl-theme">
+                      <div class="owl-controls">
+                        <div class="custom-nav owl-nav"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 pt-2">
+                  <div class="row">
+                    <div class="col-12">
+                      <h6 class="fs-6 fw-semibold">Hotel Description</h6>
+                      <p class="hotel-description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Praesentium culpa exercitationem distinctio quidem
+                        similique cumque quod fuga laboriosam cupiditate alias
+                        excepturi, qui tempora officiis ipsam odit ea natus eum
+                        accusantium animi nemo facilis aut. Enim corrupti,
+                        explicabo debitis laborum illo sunt modi nulla eaque,
+                        consectetur nemo dolores iusto saepe deserunt. Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit.
+                        Molestiae accusantium nihil esse quo praesentium
+                        asperiores eos, qui consectetur ratione voluptatibus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <h6 class="fs-6 fw-semibold">Hotel Amenities</h6>
+                      <div class="py-2">
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            class="bi bi-wifi"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"
+                            ></path>
+                            <path
+                              d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text">Wi-Fi</span>
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M5.999.75v22.5a.75.75 0 0 0 1.5 0V.75a.75.75 0 0 0-1.5 0zm3 0V7.5a2.259 2.259 0 0 1-2.252 2.25 2.258 2.258 0 0 1-2.248-2.252V.75a.75.75 0 0 0-1.5 0V7.5a3.76 3.76 0 0 0 3.748 3.75 3.76 3.76 0 0 0 3.752-3.748V.75a.75.75 0 0 0-1.5 0zm6.75 15.75h3c1.183.046 2.203-.9 2.25-2.111a2.22 2.22 0 0 0 0-.168c-.25-6.672-.828-9.78-3.231-13.533a1.508 1.508 0 0 0-2.77.81V23.25a.75.75 0 0 0 1.5 0V1.503c0 .003.001 0 .003 0a.006.006 0 0 1 .008.002c2.21 3.45 2.75 6.354 2.99 12.773v.053a.696.696 0 0 1-.721.67L15.749 15a.75.75 0 0 0 0 1.5z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text">Restaurant</span>
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            class="bi bi-snow"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793V8.866l-3.4 1.963-.496 1.85a.5.5 0 1 1-.966-.26l.237-.882-1.12.646a.5.5 0 0 1-.5-.866l1.12-.646-.884-.237a.5.5 0 1 1 .26-.966l1.848.495L7 8 3.6 6.037l-1.85.495a.5.5 0 0 1-.258-.966l.883-.237-1.12-.646a.5.5 0 1 1 .5-.866l1.12.646-.237-.883a.5.5 0 1 1 .966-.258l.495 1.849L7.5 7.134V3.207L6.147 1.854a.5.5 0 1 1 .707-.708l.646.647V.5a.5.5 0 1 1 1 0v1.293l.647-.647a.5.5 0 1 1 .707.708L8.5 3.207v3.927l3.4-1.963.496-1.85a.5.5 0 1 1 .966.26l-.236.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.883.237a.5.5 0 1 1-.26.966l-1.848-.495L9 8l3.4 1.963 1.849-.495a.5.5 0 0 1 .259.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.236.883a.5.5 0 1 1-.966.258l-.495-1.849-3.4-1.963v3.927l1.353 1.353a.5.5 0 0 1-.707.708l-.647-.647V15.5a.5.5 0 0 1-.5.5z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text">Conditioner</span>
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M23.097 21.71c-.896.187-1.71-.114-2.442-.76a4.629 4.629 0 0 1-.74-.837.75.75 0 0 0-1.272-.004 3.557 3.557 0 0 1-2.925 1.661 2.98 2.98 0 0 1-2.559-1.608.75.75 0 0 0-1.26-.11 4.418 4.418 0 0 1-3.286 1.719c-1.121-.058-2.216-.68-2.876-1.677a.75.75 0 0 0-1.214-.05 6.17 6.17 0 0 1-1.125 1.033c-.833.588-1.677.85-2.49.675a.75.75 0 1 0-.315 1.466c1.285.276 2.526-.107 3.67-.915a7.084 7.084 0 0 0 1.438-1.33l-1.214-.05a5.257 5.257 0 0 0 4.126 2.346c1.807-.084 3.417-.926 4.476-2.303l-1.26-.11a4.49 4.49 0 0 0 3.892 2.414 5.07 5.07 0 0 0 4.192-2.361l-1.272-.004c.192.308.533.739 1.022 1.17 1.057.931 2.32 1.4 3.74 1.104a.75.75 0 0 0-.306-1.468zm0-4.5c-.896.187-1.71-.114-2.442-.76a4.629 4.629 0 0 1-.74-.837.75.75 0 0 0-1.272-.004 3.557 3.557 0 0 1-2.925 1.661 2.98 2.98 0 0 1-2.559-1.608.75.75 0 0 0-1.26-.11 4.418 4.418 0 0 1-3.286 1.719c-1.121-.058-2.216-.68-2.876-1.677a.75.75 0 0 0-1.214-.05 6.17 6.17 0 0 1-1.125 1.033c-.833.588-1.677.85-2.49.675a.75.75 0 1 0-.315 1.466c1.285.276 2.526-.107 3.67-.915a7.084 7.084 0 0 0 1.438-1.33l-1.214-.05a5.257 5.257 0 0 0 4.126 2.346c1.807-.084 3.417-.926 4.476-2.303l-1.26-.11a4.49 4.49 0 0 0 3.892 2.414 5.07 5.07 0 0 0 4.192-2.361l-1.272-.004c.192.308.533.739 1.022 1.17 1.057.931 2.32 1.4 3.74 1.104a.75.75 0 0 0-.306-1.468zm-1.722-8.64a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0zm1.5 0a3.375 3.375 0 1 0-6.75 0 3.375 3.375 0 0 0 6.75 0zM7.777 14.636l3.831-2.4a.75.75 0 0 0 .166-1.13L8.964 7.9a2.25 2.25 0 0 1 .687-3.494l4.264-2.135a.751.751 0 1 1 .686 1.333l-.01.006-3.405 1.702a1.502 1.502 0 0 0-.448 2.334l5.375 6.142a.75.75 0 1 0 1.128-.988l-5.377-6.145-.002-.003v-.001l3.394-1.697.027-.013A2.25 2.25 0 0 0 13.238.93L8.98 3.065a3.749 3.749 0 0 0-1.144 5.824l2.81 3.206.166-1.13-3.831 2.4a.75.75 0 0 0 .796 1.272z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text">Pool</span>
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            class="bi bi-safe2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h12A1.5 1.5 0 0 1 16 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 1 14.5V14H.5a.5.5 0 0 1 0-1H1V9H.5a.5.5 0 0 1 0-1H1V4H.5a.5.5 0 0 1 0-1H1zM2.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5z"
+                            />
+                            <path
+                              d="M5.035 8h1.528c.047-.184.12-.357.214-.516l-1.08-1.08A3.482 3.482 0 0 0 5.035 8m1.369-2.303 1.08 1.08c.16-.094.332-.167.516-.214V5.035a3.482 3.482 0 0 0-1.596.662M9 5.035v1.528c.184.047.357.12.516.214l1.08-1.08A3.482 3.482 0 0 0 9 5.035m2.303 1.369-1.08 1.08c.094.16.167.332.214.516h1.528a3.483 3.483 0 0 0-.662-1.596M11.965 9h-1.528c-.047.184-.12.357-.214.516l1.08 1.08A3.483 3.483 0 0 0 11.965 9m-1.369 2.303-1.08-1.08c-.16.094-.332.167-.516.214v1.528a3.483 3.483 0 0 0 1.596-.662M8 11.965v-1.528a1.989 1.989 0 0 1-.516-.214l-1.08 1.08A3.483 3.483 0 0 0 8 11.965m-2.303-1.369 1.08-1.08A1.988 1.988 0 0 1 6.563 9H5.035c.085.593.319 1.138.662 1.596M4 8.5a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0m4.5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                            />
+                          </svg>
+                          <span class="amenities-wraper_text">Safe</span>
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M14.244 14.156a6.75 6.75 0 0 0-6.75-5.906A6.747 6.747 0 0 0 .73 14.397a.75.75 0 0 0 1.494.134 5.25 5.25 0 0 1 5.27-4.781 5.253 5.253 0 0 1 5.262 4.594.75.75 0 1 0 1.488-.188zM10.125 4.125a2.625 2.625 0 1 1-5.25 0V1.5h5.25v2.625zm1.5 0V1.5a1.5 1.5 0 0 0-1.5-1.5h-5.25a1.5 1.5 0 0 0-1.5 1.5v2.625a4.125 4.125 0 0 0 8.25 0zM23.25 22.5H.75l.75.75v-7.5a.75.75 0 0 1 .75-.75h19.5a.75.75 0 0 1 .75.75v7.5l.75-.75zm0 1.5a.75.75 0 0 0 .75-.75v-7.5a2.25 2.25 0 0 0-2.25-2.25H2.25A2.25 2.25 0 0 0 0 15.75v7.5c0 .414.336.75.75.75h22.5zM4.376 5.017a9.42 9.42 0 0 1 3.12-.517 9.428 9.428 0 0 1 3.133.519.75.75 0 0 0 .49-1.418A10.917 10.917 0 0 0 7.498 3a10.91 10.91 0 0 0-3.611.6.75.75 0 0 0 .49 1.417zM15.75 14.27a3.001 3.001 0 0 1 6 .16.75.75 0 1 0 1.5.04 4.501 4.501 0 1 0-9-.24.75.75 0 1 0 1.5.04zm3.75-3.77V8.25a.75.75 0 0 0-1.5 0v2.25a.75.75 0 0 0 1.5 0zM17.25 9h3a.75.75 0 0 0 0-1.5h-3a.75.75 0 0 0 0 1.5z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text"
+                            >24-hour front desk</span
+                          >
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12zm1.5 0c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12zm-9.75-1.5a1.5 1.5 0 0 1-1.5 1.5H10.5l.75.75v-4.5L10.5 9h2.25a1.5 1.5 0 0 1 1.5 1.5zm1.5 0a3 3 0 0 0-3-3H10.5a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h2.25a3 3 0 0 0 3-3zm-4.5 6.75v-4.5a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text"
+                            >Free parking</span
+                          >
+                        </div>
+                        <div class="amenities-wraper">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="#8e8e8e"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M13.125 3.56a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0zm1.5 0a3.375 3.375 0 1 0-6.75 0 3.375 3.375 0 0 0 6.75 0zm3.454 18.335l-1.836-3.67a.75.75 0 0 0-.671-.415H11.25a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 1.5 0v6c0 .414.336.75.75.75h3.75a.75.75 0 0 1 .671.415l2.25 4.5a.75.75 0 0 1-1.342.67zm-1.342.671a2.25 2.25 0 1 0 4.026-2.012l-2.25-4.5A2.25 2.25 0 0 0 16.5 14.81h-3.75l.75.75v-6a2.25 2.25 0 0 0-4.5 0v7.5a2.25 2.25 0 0 0 2.25 2.25h4.322l-.67-.415 1.835 3.672zm-4.362-.958a5.25 5.25 0 0 1-5.25-9.096.75.75 0 1 0-.75-1.299 6.75 6.75 0 1 0 6.75 11.694.75.75 0 1 0-.75-1.3z"
+                            ></path>
+                          </svg>
+                          <span class="amenities-wraper_text"
+                            >Facilities for disabled guests</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 pb-2 rating">
+                      <div class="rating-header">
+                        <div class="rating-score-box">
+                          <div class="align-self-center">8.7</div>
+                        </div>
+                        <h6>Guest Rating</h6>
+                      </div>
+                      <div class="mb-2 w-75">
+                        <div class="score-header">
+                          <div>Staff</div>
+                          <div>8.4</div>
+                        </div>
+                        <div
+                          class="progress score-line"
+                          role="progressbar"
+                          aria-label="Basic example"
+                          aria-valuenow="0"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                          <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                      </div>
+                      <div class="mb-2 w-75">
+                        <div class="score-header">
+                          <div>Location</div>
+                          <div>9.0</div>
+                        </div>
+                        <div
+                          class="progress score-line"
+                          role="progressbar"
+                          aria-label="Basic example"
+                          aria-valuenow="0"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                          <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                      </div>
+                      <div class="mb-2 w-75">
+                        <div class="score-header">
+                          <div>Cleanliness</div>
+                          <div>8.5</div>
+                        </div>
+                        <div
+                          class="progress score-line"
+                          role="progressbar"
+                          aria-label="Basic example"
+                          aria-valuenow="0"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                          <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Rooms -->
+            <div class="col-12">
+              <!-- rooms header -->
+              <div class="row">
+                <div class="col">
+                  <p class="fw-semibold">Rooms</p>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col main-bg-white room-card">
+                  <!-- 1st row -->
+                  <div class="row">
+                    <div class="col-md">
+                      <div>
+                        <p class="room-name">Superior Double Room</p>
+                        <p>Meal:&nbsp;<span>Breakfast</span></p>
+                        <p>Guest(s)&nbsp;<span>2 adults</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 my-2 my-md-0">
+                      <p>
+                        <span>Comments:</span>&nbsp; Tax/ Fee like Resort fee or
+                        any other taxes that are directly payable to the Hotel
+                        to city/government are not includes in the rate. Please
+                        check country/city specific guidelines for COVID related
+                        rules and restrictions for travelers.
+                      </p>
+                    </div>
+                    <div class="col-md">
+                      <div class="text-end">
+                        <div class="d-flex justify-content-md-between">
+                          <p>Per night:&nbsp;</p>
+                          <span>$USD 97.0</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Night(s):&nbsp;</p>
+                          <span>7</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Room(s):&nbsp;</p>
+                          <span>1</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="devider-horizontal my-2"></div>
+                  <!-- 2nd row -->
+                  <div class="row">
+                    <div class="col text-end">
+                      <div class="mb-2" style="font-weight: 700">
+                        <span>Total:</span>&nbsp;<span>$USD 1157</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col d-flex justify-content-between align-items-end"
+                    >
+                      <button class="btn-main">Cancellation Policy</button>
+                      <button class="btn-main">Select room</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col main-bg-white room-card">
+                  <!-- 1st row -->
+                  <div class="row">
+                    <div class="col-md">
+                      <div>
+                        <p class="room-name">Single Room</p>
+                        <p>Meal:&nbsp;<span>Breakfast</span></p>
+                        <p>Guest(s)&nbsp;<span>2 adults</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 my-2 my-md-0">
+                      <p>
+                        <span>Comments:</span>&nbsp; Lorem ipsum dolor sit amet
+                        consectetur, adipisicing elit. Corrupti, quam hic!
+                        Doloremque ullam tempora rerum, cumque, excepturi iusto
+                        et dignissimos mollitia inventore voluptatem distinctio
+                        cupiditate provident ipsa numquam quo perferendis.
+                      </p>
+                    </div>
+                    <div class="col-md">
+                      <div class="text-end">
+                        <div class="d-flex justify-content-md-between">
+                          <p>Per night:&nbsp;</p>
+                          <span>$USD 55.0</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Night(s):&nbsp;</p>
+                          <span>7</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Room(s):&nbsp;</p>
+                          <span>1</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="devider-horizontal my-2"></div>
+                  <!-- 2nd row -->
+                  <div class="row">
+                    <div class="col text-end">
+                      <div class="mb-2" style="font-weight: 700">
+                        <span>Total:</span>&nbsp;<span>$USD 680</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col d-flex justify-content-between align-items-end"
+                    >
+                      <button class="btn-main">Cancellation Policy</button>
+                      <button class="btn-main">Select room</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col main-bg-white room-card">
+                  <!-- 1st row -->
+                  <div class="row">
+                    <div class="col-md">
+                      <div>
+                        <p class="room-name">Premium Room</p>
+                        <p>Meal:&nbsp;<span>Breakfast</span></p>
+                        <p>Guest(s)&nbsp;<span>2 adults</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 my-2 my-md-0">
+                      <p>
+                        <span>Comments:</span>&nbsp; Tax/ Fee like Resort fee or
+                        any other taxes that are directly payable to the Hotel
+                        to city/government are not includes in the rate. Please
+                        check country/city specific guidelines for COVID related
+                        rules and restrictions for travelers.
+                      </p>
+                    </div>
+                    <div class="col-md">
+                      <div class="text-end">
+                        <div class="d-flex justify-content-md-between">
+                          <p>Per night:&nbsp;</p>
+                          <span>$USD 97.0</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Night(s):&nbsp;</p>
+                          <span>7</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Room(s):&nbsp;</p>
+                          <span>1</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="devider-horizontal my-2"></div>
+                  <!-- 2nd row -->
+                  <div class="row">
+                    <div class="col text-end">
+                      <div class="mb-2" style="font-weight: 700">
+                        <span>Total:</span>&nbsp;<span>$USD 1357</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col d-flex justify-content-between align-items-end"
+                    >
+                      <button class="btn-main">Cancellation Policy</button>
+                      <button class="btn-main">Select room</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col main-bg-white room-card">
+                  <!-- 1st row -->
+                  <div class="row">
+                    <div class="col-md">
+                      <div>
+                        <p class="room-name">Double Bed Room</p>
+                        <p>Meal:&nbsp;<span>Breakfast</span></p>
+                        <p>Guest(s)&nbsp;<span>2 adults</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 my-2 my-md-0">
+                      <p>
+                        <span>Comments:</span>&nbsp; Tax/ Fee like Resort fee or
+                        any other taxes that are directly payable to the Hotel
+                        to city/government are not includes in the rate. Please
+                        check country/city specific guidelines for COVID related
+                        rules and restrictions for travelers.
+                      </p>
+                    </div>
+                    <div class="col-md">
+                      <div class="text-end">
+                        <div class="d-flex justify-content-md-between">
+                          <p>Per night:&nbsp;</p>
+                          <span>$USD 97.0</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Night(s):&nbsp;</p>
+                          <span>7</span>
+                        </div>
+                        <div class="d-flex justify-content-md-between">
+                          <p>Room(s):&nbsp;</p>
+                          <span>1</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="devider-horizontal my-2"></div>
+                  <!-- 2nd row -->
+                  <div class="row">
+                    <div class="col text-end">
+                      <div class="mb-2" style="font-weight: 700">
+                        <span>Total:</span>&nbsp;<span>$USD 976</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col d-flex justify-content-between align-items-end"
+                    >
+                      <button class="btn-main">Cancellation Policy</button>
+                      <button class="btn-main">Select room</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="page-container">
+        <div>
+          <a
+            href="#"
+            class="d-flex justify-content-center justify-content-md-start"
+          >
+            <img
+              class="logo"
+              src="./assets/img/SkyHolidays.png"
+              alt="Skyholidays logo"
+            />
+          </a>
+          <p class="copyright mt-2">
+            &#169;Copyright 2023.All Rights Reserved.
+          </p>
+        </div>
+        <div class="devider"></div>
+        <div>
+          <h5 class="title">social with us</h5>
+          <ul class="social-link_list mt-2">
+            <li class="social-link_item">
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-facebook"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                  /></svg
+              ></a>
+            </li>
+            <li class="social-link_item">
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-instagram"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  /></svg
+              ></a>
+            </li>
+            <li class="social-link_item">
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-twitter"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="devider"></div>
+        <div>
+          <h5 class="title">our newsletter</h5>
+          <p class="copyright mt-2">
+            Never miss an offer subscribe to our newsletter
+          </p>
+          <form class="mt-3">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="16"
+                  fill="#f3712b"
+                  class="bi bi-envelope"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                  /></svg
+              ></span>
+              <input
+                type="text"
+                class="form-control"
+                id="newsletters"
+                placeholder="Email"
+              /><button class="btn-send" type="submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="#8e8e8e"
+                  class="bi bi-send"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/owl-carousel.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/counter.js"></script>
+    <script src="./assets/js/addCity-form.js"></script>
+    <script src="./assets/js/room.js"></script>
+  </body>
+</html>
