@@ -7,22 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Satisfy&family=Parisienne&display=swap"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
@@ -523,7 +509,6 @@
                               Traveler(s),
                               <span id="cabinTravellerInfoOneway">Economy</span>
                             </span>
-                            <!-- <span> Traveler(s) </span> -->
                           </button>
                           <div
                             class="dropdown-menu"
@@ -823,7 +808,7 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <button type="submit" class="btn-secondary w-100">
+                        <button type="button" onclick="window.location.href='flight-listing.html';" class="btn-secondary w-100">
                           find your flight
                         </button>
                       </div>
@@ -1167,7 +1152,7 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <button type="submit" class="btn-secondary w-100">
+                        <button type="button" onclick="window.location.href='flight-listing.html';" class="btn-secondary w-100">
                           find your flight
                         </button>
                       </div>
@@ -1604,7 +1589,7 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <button type="submit" class="btn-secondary w-100">
+                        <button type="button" onclick="window.location.href='flight-listing.html';" class="btn-secondary w-100">
                           find your flight
                         </button>
                       </div>
@@ -1647,30 +1632,25 @@
                     >
                       <div class="d-flex align-items-center select-hover">
                         <i class="bi bi-file-person-fill"></i>
-                        <select
-                        class="select"
-                        aria-label="nationality select"
-                      ><i class="bi bi-star-fill"></i>
-                        <option selected="Nationality">Nationality</option>
-                        <option value="German">German</option>
-                        <option value="Sweden">Sweden</option>
-                        <option value="Spain">Spain</option>
-                        <option value="France">France</option>
-                      </select>
+                        <select class="select" aria-label="nationality select">
+                          <i class="bi bi-star-fill"></i>
+                          <option selected="Nationality">Nationality</option>
+                          <option value="German">German</option>
+                          <option value="Sweden">Sweden</option>
+                          <option value="Spain">Spain</option>
+                          <option value="France">France</option>
+                        </select>
                       </div>
                       <div class="border border-1 h-100"></div>
                       <div class="d-flex align-items-center select-hover">
-                      <i class="bi bi-star-fill"></i>
-                      <select
-                        class="select"
-                        aria-label="star rating select"
-                      >
-                        <option selected="1 star & up">1 star & up</option>
-                        <option value="2 stars & up">2 stars & up</option>
-                        <option value="3 stars & up">3 stars & up</option>
-                        <option value="4 stars & up">4 stars & up</option>
-                        <option value="5 stars">5 stars</option>
-                      </select>
+                        <i class="bi bi-star-fill"></i>
+                        <select class="select" aria-label="star rating select">
+                          <option selected="1 star & up">1 star & up</option>
+                          <option value="2 stars & up">2 stars & up</option>
+                          <option value="3 stars & up">3 stars & up</option>
+                          <option value="4 stars & up">4 stars & up</option>
+                          <option value="5 stars">5 stars</option>
+                        </select>
                       </div>
                       <div class="border border-1 h-100"></div>
                       <div class="dropdown travellers">
@@ -1816,7 +1796,7 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <button type="submit" class="btn-secondary w-100">
+                    <button type="button" onclick="window.location.href='hotel-listing.html';" class="btn-secondary w-100">
                       find your hotel
                     </button>
                   </div>
@@ -1866,60 +1846,33 @@
                     <div
                       class="d-flex justify-content-center align-items-center gap-2"
                     >
-                      <div class="dropdown days">
-                        <button
-                          class="btn-select d-flex gap-1 align-items-center dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            class="bi bi-calendar3"
-                            viewBox="0 0 16 16"
-                          >
-                            <path
-                              d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
-                            />
-                            <path
-                              d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                            />
-                          </svg>
-                          <span>Days</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><span class="dropdown-item">1</span></li>
-                          <li>
-                            <span class="dropdown-item">2</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">3</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">4</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">5</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">6</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">7</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">8</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">9</span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item">10</span>
-                          </li>
-                        </ul>
+                      <div class="d-flex align-items-center select-hover">
+                        <i class="bi bi-file-person-fill"></i>
+                        <select class="select" aria-label="nationality select">
+                          <i class="bi bi-star-fill"></i>
+                          <option selected="Nationality">Nationality</option>
+                          <option value="German">German</option>
+                          <option value="Sweden">Sweden</option>
+                          <option value="Spain">Spain</option>
+                          <option value="France">France</option>
+                        </select>
+                      </div>
+                      <div class="border border-1 h-100"></div>
+                      <div class="d-flex align-items-center select-hover">
+                        <i class="bi bi-star-fill"></i>
+                        <select class="select" aria-label="star rating select">
+                          <option selected="Nights">Nights</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
                       </div>
                       <div class="border border-1 h-100"></div>
                       <div class="dropdown travellers" id="myDD">
@@ -2235,7 +2188,7 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <button type="submit" class="btn-secondary w-100">
+                    <button type="button" onclick="window.location.href='multi-listing.html';" class="btn-secondary w-100">
                       find your trip
                     </button>
                   </div>
