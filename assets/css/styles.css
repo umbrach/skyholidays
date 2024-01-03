@@ -472,7 +472,7 @@ p {
 }
 
 /* ------------------------------------------------------------------------- */
-/* Home page */
+/* Home page ------------------------------------------------------------------------*/
 
 section.page-hero {
   position: relative;
@@ -481,7 +481,7 @@ section.page-hero {
   min-height: 80vh;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-image: url(../img/banner_origin.jpg);
+  background-image: url(../img/banner.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1899,9 +1899,6 @@ section.page-confirmation {
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* .page-confirmation .page-container {
-  max-width: 1000px;
-} */
 .page-confirmation .title {
   margin: 10px 0px;
   font-size: 18px;
@@ -1926,10 +1923,22 @@ section.page-confirmation {
   margin-bottom: 5px;
 }
 .page-confirmation .hotel-details{
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 
 .page-confirmation .hotel-details span{
+  font-size: 14px;
+}
+
+.page-confirmation .step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  font-size: 16px;
+}
+.page-confirmation .itinerary{
+  padding: 0;
   font-size: 14px;
 }
 
