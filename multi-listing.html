@@ -345,7 +345,9 @@
     <main>
       <section class="page-listing">
         <div class="page-container">
-          <h2>This is your <span class="title-word">awesome</span> Itinerary</h2>
+          <h2>
+            This is your <span class="title-word">awesome</span> Itinerary
+          </h2>
           <div class="row main-bg-white">
             <!-- 1st row - search panel -->
             <div class="col-12 m-0">
@@ -1294,36 +1296,33 @@
               <div class="p-2 bg-grey h-100 d-flex align-items-center">
                 <div class="date-square">
                   <button class="btn-select">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      fill="currentColor"
-                      class="bi bi-plus"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-                      />
-                    </svg>
+                    <i class="bi bi-plus fs-3"></i>
                   </button>
                 </div>
               </div>
 
-                <div class="next-trip">
-                  <h4>Your next destination?</h4>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="inputDepatrure"
-                      placeholder="Add Destination"
-                    />
-                    <span class="input-group-text p-0" id="basic-addon1"
-                      ><button type="button" class="btn-main fw-bold py-1 fs-4 rounded-start-0 h-100">+</button></span>
-                  </div>
-                  <button type="button" class="btn-main py-3 w-100 fw-bold">END TRIP</button>
+              <div class="next-trip">
+                <h4>Your next destination?</h4>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputDepatrure"
+                    placeholder="Add Destination"
+                  />
+                  <span class="input-group-text p-0" id="basic-addon1"
+                    ><button
+                      type="button"
+                      class="btn-main fw-bold py-1 fs-4 rounded-start-0 h-100"
+                    >
+                      +
+                    </button></span
+                  >
                 </div>
+                <button type="button" class="btn-main py-3 w-100 fw-bold" onclick="window.location.href='multi-reservation.html';">
+                  END TRIP
+                </button>
+              </div>
             </div>
           </div>
         </div>

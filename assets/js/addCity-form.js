@@ -10,9 +10,8 @@ $(document).ready(function () {
       alert("Max City Limit Reached!!");
       return;
     }
-    $(
-      ".multi_city_form_wrapper"
-    ).append(`<div class="row g-3 mt-1 multi_city_form">
+    $(".multi_city_form_wrapper")
+      .append(`<div class="row g-3 mt-1 multi_city_form">
                       <div class="col-md-6">
                         <div class="input-group">
                           <span class="input-group-text" id="basic-addon1"
@@ -21,7 +20,7 @@ $(document).ready(function () {
                               viewBox="0 0 20 20"
                               width="18"
                               height="18"
-                              fill="#f3712b"
+                              fill="gray"
                               id="aircraft"
                             >
                               <path
@@ -45,7 +44,7 @@ $(document).ready(function () {
                               width="18"
                               height="18"
                               id="aircraft"
-                              fill="#f3712b"
+                              fill="gray"
                             >
                               <path
                                 d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
@@ -62,21 +61,7 @@ $(document).ready(function () {
                       <div class="col-md-6">
                         <div class="input-group">
                           <span class="input-group-text" id="basic-addon1"
-                            ><svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="18"
-                              height="18"
-                              fill="#f3712b"
-                              class="bi bi-calendar3"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
-                              />
-                              <path
-                                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                              /></svg
-                          ></span>
+                            ><i class="bi bi-calendar3" style="color: gray;"></i></span>
                           <input
                             class="form-control"
                             type="text"

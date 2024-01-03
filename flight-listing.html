@@ -369,1224 +369,1123 @@
               <!-- Search from -->
               <div class="col-12 p-0">
                 <div class="page-hero__form">
-                  <!-- Flights Tabs -->
-                  <div
-                    class="tab-pane fade show active"
-                    id="flight-tab-pane"
-                    role="tabpanel"
-                    aria-labelledby="flight-tab"
-                    tabindex="0"
-                  >
-                    <ul class="nav nav-tabs border-0" role="tablist">
-                      <li class="nav-item">
-                        <button
-                          class="nav-link flight active"
-                          id="oneway-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#oneway"
-                          type="button"
-                          role="tab"
-                          aria-controls="oneway"
-                          aria-selected="true"
-                          style="font-size: 14px; font-weight: 700"
-                        >
-                          <span
-                            class="d-inline-block icon-20 rounded-circle bg-white align-middle me-2 position-relative"
-                          ></span
-                          >One-way
-                        </button>
-                      </li>
-                      <li class="nav-item">
-                        <button
-                          class="nav-link flight"
-                          id="return-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#return"
-                          type="button"
-                          role="tab"
-                          aria-controls="return"
-                          aria-selected="false"
-                          style="font-size: 14px; font-weight: 700"
-                        >
-                          <span
-                            class="d-inline-block icon-20 rounded-circle bg-white align-middle me-2 position-relative"
-                          ></span
-                          >Round-trip
-                        </button>
-                      </li>
-                      <li class="nav-item">
-                        <button
-                          class="nav-link flight"
-                          id="multiCity-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#multiCity"
-                          type="button"
-                          role="tab"
-                          aria-controls="multiCity"
-                          aria-selected="false"
-                          style="font-size: 14px; font-weight: 700"
-                        >
-                          <span
-                            class="d-inline-block icon-20 rounded-circle bg-white align-middle me-2 position-relative"
-                          ></span
-                          >Multi-city
-                        </button>
-                      </li>
-                    </ul>
-                    <div class="tab-content">
-                      <!-- oneway search -->
+              <!-- Flights Tabs -->
+                <ul class="nav nav-tabs border-0" role="tablist">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link flight active"
+                      id="oneway-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#oneway"
+                      type="button"
+                      role="tab"
+                      aria-controls="oneway"
+                      aria-selected="true"
+                      style="font-size: 14px; font-weight: 700"
+                    >
+                      <span
+                        class="d-inline-block icon-20 rounded-circle bg-white align-middle me-2 position-relative"
+                      ></span
+                      >One-way
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link flight"
+                      id="return-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#return"
+                      type="button"
+                      role="tab"
+                      aria-controls="return"
+                      aria-selected="false"
+                      style="font-size: 14px; font-weight: 700"
+                    >
+                      <span
+                        class="d-inline-block icon-20 rounded-circle bg-white align-middle me-2 position-relative"
+                      ></span
+                      >Round-trip
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link flight"
+                      id="multiCity-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#multiCity"
+                      type="button"
+                      role="tab"
+                      aria-controls="multiCity"
+                      aria-selected="false"
+                      style="font-size: 14px; font-weight: 700"
+                    >
+                      <span
+                        class="d-inline-block icon-20 rounded-circle bg-white align-middle me-2 position-relative"
+                      ></span
+                      >Multi-city
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <!-- oneway search -->
+                  <div id="oneway" data-tab="Oneway" class="tab-pane active">
+                    <form class="row g-3">
                       <div
-                        id="oneway"
-                        data-tab="Oneway"
-                        class="tab-pane active"
+                        class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
                       >
-                        <form class="row g-3">
-                          <div
-                            class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
+                        <div class="dropdown travellers" id="myDD">
+                          <button
+                            class="btn-select select-hover d-flex align-items-center dropdown-toggle w-100"
+                            type="button"
+                            id="travellerInfoOneway"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
                           >
-                            <div class="dropdown travellers" id="myDD">
-                              <button
-                                class="btn-select d-flex align-items-center dropdown-toggle w-100"
-                                type="button"
-                                id="travellerInfoOneway"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="16"
-                                  height="16"
-                                  fill="currentColor"
-                                  class="bi bi-people-fill me-1"
-                                  viewBox="0 0 16 16"
+                            <i class="bi bi-people-fill me-1"></i>
+                            <span class="text-truncate">
+                              <span id="totalTravellerInfoOneway">0</span>
+                              Traveler(s),
+                              <span id="cabinTravellerInfoOneway">Economy</span>
+                            </span>
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="travellerInfoOneway"
+                          >
+                            <ul class="drop-rest">
+                              <li>
+                                <div class="d-flex">Adults</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
                                 >
-                                  <path
-                                    d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayAdult"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayAdult"
+                                    value="0"
                                   />
-                                </svg>
-                                <span class="text-truncate">
-                                  <span id="totalTravellerInfoOneway">0</span>
-                                  Traveler(s),
-                                  <span id="cabinTravellerInfoOneway"
-                                    >Economy</span
-                                  >
-                                </span>
-                              </button>
-                              <div
-                                class="dropdown-menu"
-                                aria-labelledby="travellerInfoOneway"
-                              >
-                                <ul class="drop-rest">
-                                  <li>
-                                    <div class="d-flex">Adults</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayAdult"
                                     >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayAdult"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayAdult"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayAdult"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="d-flex">Childrens</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayChild"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayChild"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayChild"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="d-flex">Infants</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayInfant"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayInfant"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayInfant"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <label
-                                      class="radio-inline text-black fs-6 text-black"
-                                    >
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Economy"
-                                        checked
-                                        class="me-2"
-                                      />Economy
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Premium"
-                                        class="me-2"
-                                      />Premium Economy
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Business"
-                                        class="me-2"
-                                      />Business
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="First"
-                                        class="me-2"
-                                      />First Class
-                                    </label>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- input fields -->
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  id="aircraft"
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex">Childrens</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
                                 >
-                                  <path
-                                    d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputDepatrure"
-                                placeholder="Departure Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  id="aircraft"
-                                  fill="#8e8e8e"
-                                >
-                                  <path
-                                    d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputArrival"
-                                placeholder="Arrival Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  class="bi bi-calendar3"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayChild"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayChild"
+                                    value="0"
                                   />
-                                  <path
-                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                  /></svg
-                              ></span>
-                              <input
-                                class="form-control"
-                                type="text"
-                                id="datepicker"
-                                placeholder="Departure date"
-                                autocomplete="off"
-                              />
-                            </div>
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayChild"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex">Infants</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayInfant"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayInfant"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayInfant"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <label
+                                  class="radio-inline text-black fs-6 text-black"
+                                >
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Economy"
+                                    checked
+                                    class="me-2"
+                                  />Economy
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Premium"
+                                    class="me-2"
+                                  />Premium Economy
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Business"
+                                    class="me-2"
+                                  />Business
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="First"
+                                    class="me-2"
+                                  />First Class
+                                </label>
+                              </li>
+                            </ul>
                           </div>
-                          <div class="col-md-6">
-                            <button type="submit" class="btn-secondary w-100">
-                              find your flight
-                            </button>
-                          </div>
-                          <!-- checkmarks -->
-                          <div class="col-md-12">
-                            <div class="form-check-inline">
-                              <label class="check-wrap">
-                                Non Stop Flights
-                                <input type="checkbox" />
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                          </div>
-                        </form>
+                        </div>
                       </div>
-                      <!-- round search -->
-                      <div id="return" data-tab="Return" class="tab-pane fade">
-                        <form class="row g-3">
-                          <div
-                            class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
-                          >
-                            <div class="dropdown travellers" id="myDDReturn">
-                              <button
-                                class="btn-select d-flex align-items-center dropdown-toggle w-100"
-                                type="button"
-                                id="travellerInfoReturn"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="16"
-                                  height="16"
-                                  fill="currentColor"
-                                  class="bi bi-people-fill me-1"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
-                                  />
-                                </svg>
-                                <span class="text-truncate">
-                                  <span id="totalTravellerInfoReturn">0</span>
-                                  Traveler(s),
-                                  <span id="cabinTravellerInfoReturn"
-                                    >Economy</span
-                                  >
-                                </span>
-                              </button>
-                              <div
-                                class="dropdown-menu"
-                                aria-labelledby="travellerInfoReturn"
-                              >
-                                <ul class="drop-rest">
-                                  <li>
-                                    <div class="d-flex">Adults</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayAdult"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayAdult"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayAdult"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="d-flex">Childrens</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayChild"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayChild"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayChild"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="d-flex">Infants</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayInfant"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayInfant"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayInfant"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <label
-                                      class="radio-inline text-black fs-6 text-black"
-                                    >
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Economy"
-                                        class="me-2"
-                                      />Economy
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Special"
-                                        class="me-2"
-                                      />Premium Economy
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Business"
-                                        class="me-2"
-                                      />Business
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="First"
-                                        class="me-2"
-                                      />First Class
-                                    </label>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- input fields -->
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  id="aircraft"
-                                >
-                                  <path
-                                    d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputDepatrure"
-                                placeholder="Departure Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  id="aircraft"
-                                  fill="#8e8e8e"
-                                >
-                                  <path
-                                    d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputArrival"
-                                placeholder="Arrival Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  class="bi bi-calendar3"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
-                                  />
-                                  <path
-                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                  /></svg
-                              ></span>
-                              <input
-                                class="form-control"
-                                placeholder="Departure/Arrival dates"
-                                autocomplete="off"
-                                name="dates"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <button type="submit" class="btn-secondary w-100">
-                              find your flight
-                            </button>
-                          </div>
-                          <!-- checkmarks -->
-                          <div class="col-md-12">
-                            <div class="form-check-inline">
-                              <label class="check-wrap"
-                                >Modify return flight
-                                <input type="checkbox" />
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                            <div class="form-check-inline">
-                              <label class="check-wrap">
-                                Non Stop Flights
-                                <input type="checkbox" />
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <!-- multicity search -->
-                      <div
-                        id="multiCity"
-                        data-tab="Multi"
-                        class="tab-pane fade"
-                      >
-                        <form class="row g-3">
-                          <div
-                            class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
-                          >
-                            <div
-                              class="dropdown travellers mb-3"
-                              id="myDDRound"
+                      <!-- input fields -->
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              fill="#8e8e8e"
+                              id="aircraft"
                             >
-                              <button
-                                class="btn-select d-flex align-items-center dropdown-toggle w-100"
-                                type="button"
-                                id="travellerInfoMulti"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="16"
-                                  height="16"
-                                  fill="currentColor"
-                                  class="bi bi-people-fill me-1"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
-                                  />
-                                </svg>
-                                <span class="text-truncate">
-                                  <span id="totalTravellerInfoMulti">0</span>
-                                  Traveler(s),
-                                  <span id="cabinTravellerInfoMulti"
-                                    >Economy</span
-                                  >
-                                </span>
-                              </button>
-                              <div
-                                class="dropdown-menu"
-                                aria-labelledby="travellerInfoMulti"
-                              >
-                                <ul class="drop-rest">
-                                  <li>
-                                    <div class="d-flex">Adults</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayAdult"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayAdult"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayAdult"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="d-flex">Childrens</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayChild"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayChild"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayChild"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="d-flex">Infants</div>
-                                    <div
-                                      class="ms-auto input-group plus-minus-input"
-                                    >
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="minus"
-                                          data-field="onewayInfant"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                      <input
-                                        class="input-group-field"
-                                        type="number"
-                                        name="onewayInfant"
-                                        value="0"
-                                      />
-                                      <div class="input-group-button">
-                                        <button
-                                          type="button"
-                                          class="circle"
-                                          data-quantity="plus"
-                                          data-field="onewayInfant"
-                                        >
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-lg"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <path
-                                              fill-rule="evenodd"
-                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <label
-                                      class="radio-inline text-black fs-6 text-black"
-                                    >
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Economy"
-                                        class="me-2"
-                                      />Economy
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Special"
-                                        class="me-2"
-                                      />Premium Economy
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="Business"
-                                        class="me-2"
-                                      />Business
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label class="radio-inline text-black fs-6">
-                                      <input
-                                        type="radio"
-                                        name="class"
-                                        value="First"
-                                        class="me-2"
-                                      />First Class
-                                    </label>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- input fields -->
-                          <div class="col-md-6 mt-3">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  id="aircraft"
-                                >
-                                  <path
-                                    d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputDepatrure"
-                                placeholder="Departure Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6 mt-3">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  id="aircraft"
-                                  fill="#8e8e8e"
-                                >
-                                  <path
-                                    d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputArrival"
-                                placeholder="Arrival Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  class="bi bi-calendar3"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
-                                  />
-                                  <path
-                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                  /></svg
-                              ></span>
-                              <input
-                                class="form-control"
-                                type="text"
-                                id="datepicker1"
-                                placeholder="Departure date"
-                                autocomplete="off"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <button
-                              type="button"
-                              class="btn-main w-100 h-100"
-                              id="addMulticityRow"
-                            >
-                              + Add City
-                            </button>
-                          </div>
-                          <div class="multi_city_form_wrapper m-0"></div>
-
-                          <!-- 2nd row -->
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  id="aircraft"
-                                >
-                                  <path
-                                    d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputDepatrure"
-                                placeholder="Departure Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  width="18"
-                                  height="18"
-                                  id="aircraft"
-                                  fill="#8e8e8e"
-                                >
-                                  <path
-                                    d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
-                                  ></path></svg
-                              ></span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputArrival"
-                                placeholder="Arrival Airport"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1"
-                                ><svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="18"
-                                  height="18"
-                                  fill="#8e8e8e"
-                                  class="bi bi-calendar3"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
-                                  />
-                                  <path
-                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                  /></svg
-                              ></span>
-                              <input
-                                class="form-control"
-                                type="text"
-                                id="datepicker2"
-                                placeholder="Departure date"
-                                autocomplete="off"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <button type="submit" class="btn-secondary w-100">
-                              find your flight
-                            </button>
-                          </div>
-                          <!-- checkmarks -->
-                          <div class="col-md-12">
-                            <div class="form-check-inline">
-                              <label class="check-wrap"
-                                >Refundable Flights
-                                <input type="checkbox" />
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                            <div class="form-check-inline">
-                              <label class="check-wrap">
-                                Non Stop Flights
-                                <input type="checkbox" />
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                          </div>
-                        </form>
+                              <path
+                                d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputDepatrure"
+                            placeholder="Departure Airport"
+                          />
+                        </div>
                       </div>
-                    </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              id="aircraft"
+                              fill="#8e8e8e"
+                            >
+                              <path
+                                d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputArrival"
+                            placeholder="Arrival Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="bi bi-calendar3" style="color: gray"></i
+                          ></span>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="datepicker"
+                            placeholder="Departure date"
+                            autocomplete="off"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button
+                          type="button"
+                          onclick="window.location.href='flight-listing.html';"
+                          class="btn-secondary w-100"
+                        >
+                          find your flight
+                        </button>
+                      </div>
+                      <!-- checkmarks -->
+                      <div class="col-md-12">
+                        <div class="form-check-inline">
+                          <label class="check-wrap">
+                            Non Stop Flights
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </form>
                   </div>
+                  <!-- round search -->
+                  <div id="return" data-tab="Return" class="tab-pane fade">
+                    <form class="row g-3">
+                      <div
+                        class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
+                      >
+                        <div class="dropdown travellers" id="myDDReturn">
+                          <button
+                            class="btn-select select-hover d-flex align-items-center dropdown-toggle w-100"
+                            type="button"
+                            id="travellerInfoReturn"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <i class="bi bi-people-fill me-1"></i>
+                            <span class="text-truncate">
+                              <span id="totalTravellerInfoReturn">0</span>
+                              Traveler(s),
+                              <span id="cabinTravellerInfoReturn">Economy</span>
+                            </span>
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="travellerInfoReturn"
+                          >
+                            <ul class="drop-rest">
+                              <li>
+                                <div class="d-flex">Adults</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayAdult"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayAdult"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayAdult"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex">Childrens</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayChild"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayChild"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayChild"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex">Infants</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayInfant"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayInfant"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayInfant"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <label
+                                  class="radio-inline text-black fs-6 text-black"
+                                >
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Economy"
+                                    class="me-2"
+                                  />Economy
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Special"
+                                    class="me-2"
+                                  />Premium Economy
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Business"
+                                    class="me-2"
+                                  />Business
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="First"
+                                    class="me-2"
+                                  />First Class
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- input fields -->
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              fill="#8e8e8e"
+                              id="aircraft"
+                            >
+                              <path
+                                d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputDepatrure"
+                            placeholder="Departure Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              id="aircraft"
+                              fill="#8e8e8e"
+                            >
+                              <path
+                                d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputArrival"
+                            placeholder="Arrival Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="bi bi-calendar3" style="color: gray;"></i></span>
+                          <input
+                            class="form-control"
+                            placeholder="Departure/Arrival dates"
+                            autocomplete="off"
+                            name="dates"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button
+                          type="button"
+                          onclick="window.location.href='flight-listing.html';"
+                          class="btn-secondary w-100"
+                        >
+                          find your flight
+                        </button>
+                      </div>
+                      <!-- checkmarks -->
+                      <div class="col-md-12">
+                        <div class="form-check-inline">
+                          <label class="check-wrap"
+                            >Modify return flight
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="form-check-inline">
+                          <label class="check-wrap">
+                            Non Stop Flights
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- multicity search -->
+                  <div id="multiCity" data-tab="Multi" class="tab-pane fade">
+                    <form class="row g-3">
+                      <div
+                        class="col-md-12 d-flex justify-content-center justify-content-sm-end text-small"
+                      >
+                        <div class="dropdown travellers mb-3" id="myDDRound">
+                          <button
+                            class="btn-select select-hover d-flex align-items-center dropdown-toggle w-100"
+                            type="button"
+                            id="travellerInfoMulti"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <i class="bi bi-people-fill me-1"></i>
+                            <span class="text-truncate">
+                              <span id="totalTravellerInfoMulti">0</span>
+                              Traveler(s),
+                              <span id="cabinTravellerInfoMulti">Economy</span>
+                            </span>
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="travellerInfoMulti"
+                          >
+                            <ul class="drop-rest">
+                              <li>
+                                <div class="d-flex">Adults</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayAdult"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayAdult"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayAdult"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex">Childrens</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayChild"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayChild"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayChild"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex">Infants</div>
+                                <div
+                                  class="ms-auto input-group plus-minus-input"
+                                >
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="minus"
+                                      data-field="onewayInfant"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <input
+                                    class="input-group-field"
+                                    type="number"
+                                    name="onewayInfant"
+                                    value="0"
+                                  />
+                                  <div class="input-group-button">
+                                    <button
+                                      type="button"
+                                      class="circle"
+                                      data-quantity="plus"
+                                      data-field="onewayInfant"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-lg"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <label
+                                  class="radio-inline text-black fs-6 text-black"
+                                >
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Economy"
+                                    class="me-2"
+                                  />Economy
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Special"
+                                    class="me-2"
+                                  />Premium Economy
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="Business"
+                                    class="me-2"
+                                  />Business
+                                </label>
+                              </li>
+                              <li>
+                                <label class="radio-inline text-black fs-6">
+                                  <input
+                                    type="radio"
+                                    name="class"
+                                    value="First"
+                                    class="me-2"
+                                  />First Class
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- input fields -->
+                      <div class="col-md-6 mt-3">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              fill="#8e8e8e"
+                              id="aircraft"
+                            >
+                              <path
+                                d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputDepatrure"
+                            placeholder="Departure Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6 mt-3">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              id="aircraft"
+                              fill="#8e8e8e"
+                            >
+                              <path
+                                d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputArrival"
+                            placeholder="Arrival Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="bi bi-calendar3" style="color: gray;"></i></span>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="datepicker1"
+                            placeholder="Departure date"
+                            autocomplete="off"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button
+                          type="button"
+                          class="btn-main w-100 h-100"
+                          id="addMulticityRow"
+                        >
+                          + Add City
+                        </button>
+                      </div>
+                      <div class="multi_city_form_wrapper m-0"></div>
+
+                      <!-- 2nd row -->
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              fill="#8e8e8e"
+                              id="aircraft"
+                            >
+                              <path
+                                d="M19.87 6.453c.119.257.127 1.29-4.884 3.642l-4.913 2.306c-1.71.803-4.191 1.859-5.285 2.151-.766.204-1.497-.316-1.497-.316S1.085 12.261.499 11.817c-.585-.444-.535-.67.215-.91.467-.149 3.13.493 4.265.78A91.697 91.697 0 0 1 8.12 9.889c-1.396-1.033-4.008-2.962-4.841-3.55-.799-.565.01-.768.01-.768.368-.099 1.162-.228 1.562-.144 2.721.569 7.263 2.071 7.611 2.186a90.641 90.641 0 0 1 2.922-1.465c2.075-.974 4.327-.037 4.486.305z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputDepatrure"
+                            placeholder="Departure Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              width="18"
+                              height="18"
+                              id="aircraft"
+                              fill="#8e8e8e"
+                            >
+                              <path
+                                d="M18.752 16.038c-.097.266-.822 1.002-6.029-.878l-5.105-1.843C5.841 12.676 3.34 11.668 2.36 11.1c-.686-.397-.836-1.282-.836-1.282s-.163-2.956-.263-3.684c-.1-.728.095-.853.796-.492.436.225 1.865 2.562 2.464 3.567 1.512.381 2.862.761 3.493.949-.257-1.717-.74-4.928-.913-5.933-.166-.963.55-.535.55-.535.331.19.983.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928.896.28 2.277.733 3.102 1.03 2.156.779 3.087 3.034 2.957 3.388z"
+                              ></path></svg
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputArrival"
+                            placeholder="Arrival Airport"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="bi bi-calendar3" style="color: gray;"></i></span>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="datepicker2"
+                            placeholder="Departure date"
+                            autocomplete="off"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button
+                          type="button"
+                          onclick="window.location.href='flight-listing.html';"
+                          class="btn-secondary w-100"
+                        >
+                          find your flight
+                        </button>
+                      </div>
+                      <!-- checkmarks -->
+                      <div class="col-md-12">
+                        <div class="form-check-inline">
+                          <label class="check-wrap"
+                            >Refundable Flights
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="form-check-inline">
+                          <label class="check-wrap">
+                            Non Stop Flights
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -1852,7 +1751,8 @@
                         <div class="fw-bold me-3 fs-5">US$ 193.25</div>
                         <button
                           type="button"
-                          class="btn-secondary fw-semibold p-2" onclick="window.location.href='flight-payment.html';"
+                          class="btn-secondary fw-semibold p-2"
+                          onclick="window.location.href='flight-payment.html';"
                         >
                           Book Now
                         </button>
@@ -2398,7 +2298,8 @@
                         <div class="fw-bold me-3 fs-5">US$ 232.00</div>
                         <button
                           type="button"
-                          class="btn-secondary fw-semibold p-2" onclick="window.location.href='flight-payment.html';"
+                          class="btn-secondary fw-semibold p-2"
+                          onclick="window.location.href='flight-payment.html';"
                         >
                           Book Now
                         </button>
