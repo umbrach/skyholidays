@@ -6,10 +6,7 @@
     <title>SkyHolidays - Hotel Listing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    />
+
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
@@ -369,156 +366,162 @@
               <!-- Search form -->
               <div class="col-12 p-0">
                 <div class="page-hero__form">
-              <!-- Hotel Tabs -->
-                <form class="row g-3">
-                  <div
-                    class="col-md-12 d-flex justify-content-center text-small"
-                  >
-                    <div class="col-md-6"></div>
+                  <!-- Hotel Tabs -->
+                  <form class="row g-3">
                     <div
-                      class="col-md-6 d-flex justify-content-end align-items-center gap-2"
+                      class="col-md-12 d-flex justify-content-center text-small"
                     >
-                      <div class="d-flex align-items-center select-hover">
-                        <i class="bi bi-file-person-fill"></i>
-                        <select class="select" aria-label="nationality select">
+                      <div class="col-md-6"></div>
+                      <div
+                        class="col-md-6 d-flex justify-content-end align-items-center gap-2"
+                      >
+                        <div class="d-flex align-items-center select-hover">
+                          <i class="bi bi-file-person-fill"></i>
+                          <select
+                            class="select"
+                            aria-label="nationality select"
+                          >
+                            <i class="bi bi-star-fill"></i>
+                            <option selected="Nationality">Nationality</option>
+                            <option value="German">German</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Spain">Spain</option>
+                            <option value="France">France</option>
+                          </select>
+                        </div>
+                        <div class="border border-1 h-100"></div>
+                        <div class="d-flex align-items-center select-hover">
                           <i class="bi bi-star-fill"></i>
-                          <option selected="Nationality">Nationality</option>
-                          <option value="German">German</option>
-                          <option value="Sweden">Sweden</option>
-                          <option value="Spain">Spain</option>
-                          <option value="France">France</option>
-                        </select>
-                      </div>
-                      <div class="border border-1 h-100"></div>
-                      <div class="d-flex align-items-center select-hover">
-                        <i class="bi bi-star-fill"></i>
-                        <select class="select" aria-label="star rating select">
-                          <option selected="1 star & up">1 star & up</option>
-                          <option value="2 stars & up">2 stars & up</option>
-                          <option value="3 stars & up">3 stars & up</option>
-                          <option value="4 stars & up">4 stars & up</option>
-                          <option value="5 stars">5 stars</option>
-                        </select>
-                      </div>
-                      <div class="border border-1 h-100"></div>
-                      <div class="dropdown travellers">
-                        <button
-                          class="btn-select select-hover d-flex gap-1 align-items-center dropdown-toggle w-100"
-                          type="button"
-                          id="guestDropdown"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="bi bi-people-fill"></i>
-                          <span id="totalAdults">0</span> Adults,
-                          <span id="totalChildren">0</span>
-                          Childrens
-                        </button>
-                        <ul
-                          class="dropdown-menu rooms"
-                          aria-labelledby="guestDropdown"
-                        >
-                          <li class="p-1">
-                            <p class="room-top">Room 1</p>
-                            <div class="d-flex gap-2 justify-content-between">
-                              <span class="adult">Adults:</span>
-                              <div
-                                class="btn-group counter-add-item"
-                                role="group"
-                              >
-                                <a
-                                  type="button"
-                                  class="btn decrease-btn"
-                                  onclick="decreaseGuest('adult', 0, event); event.stopPropagation();"
-                                  >-</a
+                          <select
+                            class="select"
+                            aria-label="star rating select"
+                          >
+                            <option selected="1 star & up">1 star & up</option>
+                            <option value="2 stars & up">2 stars & up</option>
+                            <option value="3 stars & up">3 stars & up</option>
+                            <option value="4 stars & up">4 stars & up</option>
+                            <option value="5 stars">5 stars</option>
+                          </select>
+                        </div>
+                        <div class="border border-1 h-100"></div>
+                        <div class="dropdown travellers">
+                          <button
+                            class="btn-select select-hover d-flex gap-1 align-items-center dropdown-toggle w-100"
+                            type="button"
+                            id="guestDropdown"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <i class="bi bi-people-fill"></i>
+                            <span id="totalAdults">0</span> Adults,
+                            <span id="totalChildren">0</span>
+                            Childrens
+                          </button>
+                          <ul
+                            class="dropdown-menu rooms"
+                            aria-labelledby="guestDropdown"
+                          >
+                            <li class="p-1">
+                              <p class="room-top">Room 1</p>
+                              <div class="d-flex gap-2 justify-content-between">
+                                <span class="adult">Adults:</span>
+                                <div
+                                  class="btn-group counter-add-item"
+                                  role="group"
                                 >
-                                <span class="span-count" id="adultCount-0"
-                                  >0</span
-                                >
-                                <a
-                                  type="button"
-                                  class="btn increase-btn"
-                                  onclick="increaseGuest('adult', 0, event); event.stopPropagation();"
-                                  >+</a
-                                >
+                                  <a
+                                    type="button"
+                                    class="btn decrease-btn"
+                                    onclick="decreaseGuest('adult', 0, event); event.stopPropagation();"
+                                    >-</a
+                                  >
+                                  <span class="span-count" id="adultCount-0"
+                                    >0</span
+                                  >
+                                  <a
+                                    type="button"
+                                    class="btn increase-btn"
+                                    onclick="increaseGuest('adult', 0, event); event.stopPropagation();"
+                                    >+</a
+                                  >
+                                </div>
                               </div>
-                            </div>
-                          </li>
-                          <li class="p-1">
-                            <div class="d-flex gap-2 justify-content-between">
-                              <span class="child">Childs:</span>
-                              <div
-                                class="btn-group counter-add-item"
-                                role="group"
-                              >
-                                <a
-                                  type="button"
-                                  class="btn decrease-btn"
-                                  onclick="decreaseGuest('child', 0, event); event.stopPropagation();"
-                                  >-</a
+                            </li>
+                            <li class="p-1">
+                              <div class="d-flex gap-2 justify-content-between">
+                                <span class="child">Childs:</span>
+                                <div
+                                  class="btn-group counter-add-item"
+                                  role="group"
                                 >
-                                <span class="span-count" id="childCount-0"
-                                  >0</span
-                                >
-                                <a
-                                  type="button"
-                                  class="btn increase-btn"
-                                  onclick="increaseGuest('child', 0, event); event.stopPropagation();"
-                                  >+</a
-                                >
+                                  <a
+                                    type="button"
+                                    class="btn decrease-btn"
+                                    onclick="decreaseGuest('child', 0, event); event.stopPropagation();"
+                                    >-</a
+                                  >
+                                  <span class="span-count" id="childCount-0"
+                                    >0</span
+                                  >
+                                  <a
+                                    type="button"
+                                    class="btn increase-btn"
+                                    onclick="increaseGuest('child', 0, event); event.stopPropagation();"
+                                    >+</a
+                                  >
+                                </div>
                               </div>
-                            </div>
-                            <div id="childAges-0"></div>
-                          </li>
-                          <li class="w-100">
-                            <button
-                              type="button"
-                              class="btn btn-add-room"
-                              onclick="addRoom(event);"
-                            >
-                              + Add Room
-                            </button>
-                          </li>
-                        </ul>
+                              <div id="childAges-0"></div>
+                            </li>
+                            <li class="w-100">
+                              <button
+                                type="button"
+                                class="btn btn-add-room"
+                                onclick="addRoom(event);"
+                              >
+                                + Add Room
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1"
-                        ><i class="bi bi-geo-alt-fill" style="color: gray"></i
-                      ></span>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputLocation"
-                        placeholder="Location"
-                      />
+                    <div class="col-md-12">
+                      <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"
+                          ><i class="bi bi-geo-alt-fill" style="color: gray"></i
+                        ></span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputLocation"
+                          placeholder="Location"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1"
-                        ><i class="bi bi-calendar3" style="color: gray"></i
-                      ></span>
-                      <input
-                        class="form-control"
-                        placeholder="Chek In / Check Out Dates"
-                        name="dates"
-                        autocomplete="off"
-                      />
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"
+                          ><i class="bi bi-calendar3" style="color: gray"></i
+                        ></span>
+                        <input
+                          class="form-control"
+                          placeholder="Chek In / Check Out Dates"
+                          name="dates"
+                          autocomplete="off"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <button
-                      type="button"
-                      onclick="window.location.href='hotel-listing.html';"
-                      class="btn-secondary w-100"
-                    >
-                      find your hotel
-                    </button>
-                  </div>
-                </form>
+                    <div class="col-md-6">
+                      <button
+                        type="button"
+                        onclick="window.location.href='hotel-listing.html';"
+                        class="btn-secondary w-100"
+                      >
+                        find your hotel
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -846,7 +849,8 @@
                   <div class="italic">includes taxes & charges</div>
                   <button
                     type="button"
-                    class="btn-secondary fw-semibold py-2 px-4 mt-2" onclick="window.location.href='hotel-page.html';"
+                    class="btn-secondary fw-semibold py-2 px-4 mt-2"
+                    onclick="window.location.href='hotel-page.html';"
                   >
                     Select
                   </button>
@@ -966,7 +970,8 @@
                   <div class="italic">includes taxes & charges</div>
                   <button
                     type="button"
-                    class="btn-secondary fw-semibold py-2 px-4 mt-2" onclick="window.location.href='hotel-page.html';"
+                    class="btn-secondary fw-semibold py-2 px-4 mt-2"
+                    onclick="window.location.href='hotel-page.html';"
                   >
                     Select
                   </button>
@@ -1086,7 +1091,8 @@
                   <div class="italic">includes taxes & charges</div>
                   <button
                     type="button"
-                    class="btn-secondary fw-semibold py-2 px-4 mt-2" onclick="window.location.href='hotel-page.html';"
+                    class="btn-secondary fw-semibold py-2 px-4 mt-2"
+                    onclick="window.location.href='hotel-page.html';"
                   >
                     Select
                   </button>
@@ -1206,7 +1212,8 @@
                   <div class="italic">includes taxes & charges</div>
                   <button
                     type="button"
-                    class="btn-secondary fw-semibold py-2 px-4 mt-2" onclick="window.location.href='hotel-page.html';"
+                    class="btn-secondary fw-semibold py-2 px-4 mt-2"
+                    onclick="window.location.href='hotel-page.html';"
                   >
                     Select
                   </button>
